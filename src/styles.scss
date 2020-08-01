@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+}
+
+.image-style{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 16%;
+}
+
+.list-class{
+    list-style: none;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}

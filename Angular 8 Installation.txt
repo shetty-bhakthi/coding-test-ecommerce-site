@@ -1,0 +1,8 @@
+Angular 8 Installation
+
+Make sure you have Node.js( version 10 or later)
+check node version : node -v
+
+Install angular cli and core using command :
+    npm install -g @angular/cli@8.1 @angular/core@8.1
+

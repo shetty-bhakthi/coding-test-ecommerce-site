@@ -1,0 +1,12 @@
+<!-- this component displays all the items in shopping page-->
+
+<ul *ngFor = "let item of shopping_items" class="list-class">
+    <mat-card>
+        <img class = "image-style" [src]="item.image"><br/>
+        <li>Product Name : {{ item.name}}</li><br/>
+        <li>Product Details : {{ item.description}}</li><br/>
+        <li>Price : {{ item.price}} INR</li><br/>
+        <li>Quantity : {{ item.quantity}}</li>
+        <button mat-raised-button color= primary [disabled] = "item.disabled" (click)="add_to_cart(item)">Add to Cart</button>
+    </mat-card>
+</ul>

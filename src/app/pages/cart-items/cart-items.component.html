@@ -1,0 +1,39 @@
+<!-- If there is item present in cart-->
+<div *ngIf = "cart_data != undefined && this.cart_data.length != 0">
+	<h1 mat-dialog-title color = primary>Items added to cart</h1>
+	<div mat-dialog-content>
+		<ul class="list-class" *ngFor = "let item of cart_data;let index = index">
+			<mat-card>
+				<img class ="image-style" [src]="item.image"><br/>
+				<li>Product Name : {{ item.name}}</li><br/>
+				<li>Product Details : {{ item.description}}</li><br/>
+				<li>Price : {{ item.price}} INR</li><br/>
+				<li>Quantity : {{ item.quantity}}</li>
+
+				<li>
+					<mat-form-field class="example-full-width">
+						<input matInput [(ngModel)]="quantity">
+					</mat-form-field>
+					<mat-label *ngIf="error_flag">Please give valid Quantity.</mat-label>
+
+					<button mat-button (click)="add_quantity(quantity, item)">Add Quantity</button>
+				</li>
+				<button mat-raised-button color= primary (click)="remove_from_cart(item,index)">Remove</button>
+			</mat-card>
+		</ul>
+		<p class="amt-style"> Total Amount:  <b>{{ total_amount }} INR</b></p>
+		
+		<div mat-dialog-actions >
+			<button mat-button  class = "dialog-btn" (click)="close_dialog()">Close</button>
+		</div>
+	</div>
+</div>
+
+<!-- If there is no item in cart-->
+<div *ngIf = "cart_data == undefined || this.cart_data.length == 0">
+	<p>No Items added</p>
+	<div mat-dialog-actions>
+		<button mat-button class = "dialog-btn" (click)="close_dialog()">Close</button>
+	</div>
+</div>
+

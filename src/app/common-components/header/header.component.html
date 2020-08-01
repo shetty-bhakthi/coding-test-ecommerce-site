@@ -1,0 +1,14 @@
+<mat-toolbar color=primary>
+    <span>Logo</span>
+
+    <span class="header-spacer"></span>
+
+    <button mat-icon-button class = "basket-icon" aria-label="cart icon"
+        matBadge="{{item_count}}"
+        matBadgePosition="after" 
+        matBadgeColor="accent"
+        (click)="show_cart_items()">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+</mat-toolbar>
